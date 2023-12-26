@@ -1,0 +1,22 @@
+To troubleshoot and resolve the issue of charts not updating in real-time as new data arrives from the API in a ReactJS and Tailwind CSS dashboard, you can follow these steps:
+
+1. Check API Response:
+Check if the API is returning the updated data correctly. Have to use tools like Postman or Hopscotch to inspect the API response.
+I can also do that by using browser inspect or by console.log fucntion
+
+2. Event Source or WebSocket:
+For realtime data use web socket like (Socket IO) isntead of Server-Sent Events.
+
+3. State Management (useState):
+Confirm that the component's state is being updated with the new data. Sometimes react state needs to re-rendered, or sometimes needs some time to change.
+
+4. React Hooks(useEffect):
+Ensure that React Hooks (useEffect) are being used appropriately. The useEffect hook is crucial for handling side effects such as fetching data and updating the state.
+When new data is fetched run useEffect to change state of the variable and graphs.
+
+5. Memory Leaks:
+Continuous data fetching without proper cleanup can lead to memory leaks. Make sure to clean up any resources (such as event listeners or subscriptions) in the useEffect cleanup function.
+
+6. Other problems
+Cross-Origin Resource Sharing (CORS) issues with the API.
+Network errors or latency causing delays in data retrieval.
